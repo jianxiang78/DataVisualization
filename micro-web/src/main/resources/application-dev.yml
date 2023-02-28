@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+# log
+logging:
+  level:
+    com:
+      operatorTracker: debug
+    org:
+      springframework: warn
+  path: logs/app-web
+
+
+

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<style>
+    .header{
+        height:10%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: #100c2a;
+        color: aliceblue;
+        font-size: 40px;
+    }
+</style>
+<body style="height: 100%; margin: 0">
+<div id="table" style="height: 100%">
+    <div class="header">Data Visualization</div>
+    <div style="height: 90%">
+        <div id="container1" style="height: 100%;width: 50%;float: left;"></div>
+        <div id="container2" style="height: 100%;width: 50%;float: left;"></div>
+    </div>
+</div>
+
+
+<script src="./js/echarts/echarts.min.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/sockjs-0.3.4.js"></script>
+<script src="./js/stomp.js"></script>
+
+<script type="text/javascript">
+    var dom1 = document.getElementById('container1');
+    var dom2 = document.getElementById('container2');
+    var myChart1 = echarts.init(dom1, 'dark', {
+        renderer: 'svg',
+        useDirtyRect: false
+    });
+    var myChart2 = echarts.init(dom2, 'dark', {
+        renderer: 'svg',
+        useDirtyRect: false
+    });
+    var option1,option2;
+
+    option1 = {
+        series: [
+            {
+                type: 'gauge',
+                center: ['50%', '60%'],
+                startAngle: 200,
+                endAngle: -20,
+                min: 0,
+                max: 60,
+                splitNumber: 12,
+                itemStyle: {
+                    color: '#FFAB91'
+                },
+                progress: {
+                    show: true,
+                    width: 30
+                },
+                pointer: {
+                    show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        width: 30
+                    }
+                },
+                axisTick: {
+                    distance: -45,
+                    splitNumber: 5,
+                    lineStyle: {
+                        width: 2,
+                        color: '#999'
+                    }
+                },
+                splitLine: {
+                    distance: -52,
+                    length: 14,
+                    lineStyle: {
+                        width: 3,
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    distance: -20,
+                    color: '#999',
+                    fontSize: 20
+                },
+                anchor: {
+                    show: false
+                },
+                title: {
+                    show: false
+                },
+                detail: {
+                    valueAnimation: true,
+                    width: '60%',
+                    lineHeight: 40,
+                    borderRadius: 8,
+                    offsetCenter: [0, '-15%'],
+                    fontSize: 60,
+                    fontWeight: 'bolder',
+                    formatter: '{value} °C',
+                    color: 'inherit'
+                },
+                data: [
+                    {
+                        value: 20,
+                        name: 'Temperature Gauge 1'
+                    }
+                ]
+            },
+            {
+                type: 'gauge',
+                center: ['50%', '60%'],
+                startAngle: 200,
+                endAngle: -20,
+                min: 0,
+                max: 60,
+                itemStyle: {
+                    color: '#FD7347'
+                },
+                progress: {
+                    show: true,
+                    width: 8
+                },
+                pointer: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false
+                },
+                detail: {
+                    show: false
+                },
+                data: [
+                    {
+                        value: 20,
+                        name: 'Temperature Gauge 1'
+                    }
+                ]
+            }
+        ]
+    };
+    option2 = {
+        series: [
+            {
+                type: 'gauge',
+                center: ['50%', '60%'],
+                startAngle: 200,
+                endAngle: -20,
+                min: 0,
+                max: 60,
+                splitNumber: 12,
+                itemStyle: {
+                    color: '#FFAB91'
+                },
+                progress: {
+                    show: true,
+                    width: 30
+                },
+                pointer: {
+                    show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        width: 30
+                    }
+                },
+                axisTick: {
+                    distance: -45,
+                    splitNumber: 5,
+                    lineStyle: {
+                        width: 2,
+                        color: '#999'
+                    }
+                },
+                splitLine: {
+                    distance: -52,
+                    length: 14,
+                    lineStyle: {
+                        width: 3,
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    distance: -20,
+                    color: '#999',
+                    fontSize: 20
+                },
+                anchor: {
+                    show: false
+                },
+                title: {
+                    show: false
+                },
+                detail: {
+                    valueAnimation: true,
+                    width: '60%',
+                    lineHeight: 40,
+                    borderRadius: 8,
+                    offsetCenter: [0, '-15%'],
+                    fontSize: 60,
+                    fontWeight: 'bolder',
+                    formatter: '{value} °C',
+                    color: 'inherit'
+                },
+                data: [
+                    {
+                        value: 20,
+                        name: 'Temperature Gauge 2'
+                    }
+                ]
+            },
+            {
+                type: 'gauge',
+                center: ['50%', '60%'],
+                startAngle: 200,
+                endAngle: -20,
+                min: 0,
+                max: 60,
+                itemStyle: {
+                    color: '#FD7347'
+                },
+                progress: {
+                    show: true,
+                    width: 8
+                },
+                pointer: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false
+                },
+                detail: {
+                    show: false
+                },
+                data: [
+                    {
+                        value: 20,
+                        name: 'Temperature Gauge 2'
+                    }
+                ]
+            }
+        ]
+    };
+    // setInterval(function () {
+    //     var random = +(Math.random() * 60).toFixed(2);
+    //     myChart1.setOption({
+    //         series: [
+    //             {
+    //                 data: [
+    //                     {
+    //                         value: random,
+    //                         name: 'Temperature Gauge 1'
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 data: [
+    //                     {
+    //                         value: random,
+    //                         name: 'Temperature Gauge 1'
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+    //     });
+    // }, 2000);
+    //
+    // setInterval(function () {
+    //     var random = +(Math.random() * 60).toFixed(2);
+    //     myChart2.setOption({
+    //         series: [
+    //             {
+    //                 data: [
+    //                     {
+    //                         value: random,
+    //                         name: 'Temperature Gauge 2'
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 data: [
+    //                     {
+    //                         value: random,
+    //                         name: 'Temperature Gauge 2'
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+    //     });
+    // }, 3000);
+
+    if (option1 && typeof option1 === 'object') {
+        myChart1.setOption(option1);
+    }
+
+    if (option2 && typeof option2 === 'object') {
+        myChart2.setOption(option2);
+    }
+
+    function fromServer() {
+        var stomp = null;
+        function connect() {
+            var socket = new SockJS('/webSocketServer');
+            stomp = Stomp.over(socket);
+            var headers={
+                "token":"xxx_token"
+            };
+            stomp.connect(headers, connectCallback ,errorCallback );
+        };
+
+        function connectCallback (frame) {
+            //Callback function after successful connection
+            console.log('Connected successful: ' + frame);
+            stomp.subscribe('/data/iot1', function(serverResult){
+                myChart1.setOption(JSON.parse(serverResult.body));
+            });
+            stomp.subscribe('/data/iot2', function(serverResult){
+                myChart2.setOption(JSON.parse(serverResult.body));
+            });
+
+
+        }
+        function errorCallback(frame){
+            //The callback function after the connection fails. This function calls the connection function again
+            console.log('Connected fails: ' + frame);
+            connect();
+        }
+
+        connect();
+    }
+
+    fromServer();
+</script>
+</body>
+</html>
