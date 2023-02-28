@@ -1,8 +1,14 @@
-# Data set in GridDB realizes data visualization on WEB
+# Data Set in GridDB realizes data visualization on WEB
 
-This project was built with SpringBoot, WebSocket & GridDB. 
+This project was built with ECharts, SpringBoot, WebSocket & GridDB. 
 
 ....Uploading...
+
+
+<video autoplay="autoplay">
+  <source src="screenshot/DataVisualization.mp4" type="video/mp4">
+</video>
+
 
 ## Technology Stack
 Operating system: Ubuntu-18.04.6
