@@ -5,9 +5,7 @@ This project was built with ECharts, SpringBoot, WebSocket & GridDB.
 ....Uploading...
 
 
-<video autoplay="autoplay">
-  <source src="screenshot/DataVisualization.mp4" type="video/mp4">
-</video>
+<video src="screenshot/DataVisualization.mp4"></video>
 
 
 ## Technology Stack
