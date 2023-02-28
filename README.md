@@ -4,7 +4,7 @@ This project was built with ECharts, SpringBoot, WebSocket & GridDB.
 
 ....Uploading...
 
-<img src="screenshot/DataVisualization.gif" alt="screenshot">
+![screenshot](screenshot/DataVisualization.gif#pic_center)
 
 ## Technology Stack
 Operating system: Ubuntu-18.04.6
