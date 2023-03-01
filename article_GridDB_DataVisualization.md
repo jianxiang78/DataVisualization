@@ -1,4 +1,4 @@
-#How to develop data visualization of GridDB
+# How to develop data visualization of GridDB
 
 As a time series database, GridDB is suitable for the business scenarios of the Internet of Things and big data. Especially in the business scenario of the Internet of Things, data has timeliness. How to visualize the data set in GridDB and reflect the dynamic effect of time is an interesting topic.
 
@@ -10,12 +10,15 @@ After the project runs,enter the address in the browser of the local computer ht
 
 ![screenshot](screenshot/DataVisualization.gif#pic_center)
 
-## Technology Stack
-Operating System: Ubuntu-18.04.6\
-Front-end: HTML, JavaScript, ECharts 5.4.0, WebSocket\
-Back-end: Java 11.0.2, Spring Boot, WebSocket, Maven\
-Development tool: IntelliJ IDEA 2019\
+```
+Technology Stack
+Operating System: Ubuntu-18.04.6
+Front-end: HTML, JavaScript, ECharts 5.4.0, WebSocket
+Back-end: Java 11.0.2, Spring Boot, WebSocket, Maven
+Development tool: IntelliJ IDEA 2019
 Database: GridDB 5.1.0
+```
+
 This project is a simple and complete WEB microservice system. The project simulates the data transmission of the Temperature Gauge in the Internet of Things scenario, and  visualizes the changes of the data set in real time on the web. After opening the web page, the web page does not need to be refreshed, and the data changes can be displayed directly on the web page.
   
 The data set of Temperature Gauge is stored in GridDB. In the code of the project, the timed task program simulates the data of the Internet of Things device constantly inserted into the GridDB.
@@ -116,7 +119,7 @@ The class dbConnect.java implements the operation of data sets in GridDB. In the
 getConnect() Realize connection acquisition of GridDB\
 close() Close the connection of GridDB\
 put(String containerName,Iot iot) Implement the insertion of temporal data objects\
-queryTopOne(String containerName) Realize the extraction of the latest item of time series data\
+queryTopOne(String containerName) Realize the extraction of the latest item of time series data
 
 Class Iot.java is the device data entity object, and uses the annotation @RowKey of GridDB to mark the primary key
 ```
