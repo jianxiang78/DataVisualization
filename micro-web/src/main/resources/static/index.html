@@ -26,7 +26,6 @@
 
 
 <script src="./js/echarts/echarts.min.js"></script>
-<script src="./js/jquery.js"></script>
 <script src="./js/sockjs-0.3.4.js"></script>
 <script src="./js/stomp.js"></script>
 
@@ -265,53 +264,6 @@
             }
         ]
     };
-    // setInterval(function () {
-    //     var random = +(Math.random() * 60).toFixed(2);
-    //     myChart1.setOption({
-    //         series: [
-    //             {
-    //                 data: [
-    //                     {
-    //                         value: random,
-    //                         name: 'Temperature Gauge 1'
-    //                     }
-    //                 ]
-    //             },
-    //             {
-    //                 data: [
-    //                     {
-    //                         value: random,
-    //                         name: 'Temperature Gauge 1'
-    //                     }
-    //                 ]
-    //             }
-    //         ]
-    //     });
-    // }, 2000);
-    //
-    // setInterval(function () {
-    //     var random = +(Math.random() * 60).toFixed(2);
-    //     myChart2.setOption({
-    //         series: [
-    //             {
-    //                 data: [
-    //                     {
-    //                         value: random,
-    //                         name: 'Temperature Gauge 2'
-    //                     }
-    //                 ]
-    //             },
-    //             {
-    //                 data: [
-    //                     {
-    //                         value: random,
-    //                         name: 'Temperature Gauge 2'
-    //                     }
-    //                 ]
-    //             }
-    //         ]
-    //     });
-    // }, 3000);
 
     if (option1 && typeof option1 === 'object') {
         myChart1.setOption(option1);
@@ -347,7 +299,7 @@
         function errorCallback(frame){
             //The callback function after the connection fails. This function calls the connection function again
             console.log('Connected fails: ' + frame);
-            connect();
+            setTimeout(connect,2000);
         }
 
         connect();
