@@ -6,7 +6,8 @@ This article mainly introduces how to develop and realize the dynamic visualizat
 
 https://github.com/jianxiang78/DataVisualization
 
-After the project runs,enter the address in the browser of the local computer http://127.0.0.1:8080, the screenshot animation effect is as follows
+After the project runs, enter the address in the browser of the local computer http://127.0.0.1:8080, the screenshot
+ animation effect is as follows
 
 ![screenshot](screenshot/DataVisualization.gif#pic_center)
 
