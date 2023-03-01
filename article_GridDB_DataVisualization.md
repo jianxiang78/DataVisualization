@@ -31,7 +31,7 @@ https://docs.griddb.net/gettingstarted/using-apt/#install-with-apt-get
 
 The version of GridDB I installed is 5.1.0. After installation, there is a built-in gridstore.jar library that connects to the database. I have copied it into the project code in the "lib" directory. Because the gridstore.jar library was developed with JDK 11.0.2, the entire project also uses JDK 11.0.2 for compatibility.
 
-##How to establish communication at the front-end
+## How to establish communication at the front-end
 
 This project adopts WebSocket mode, which allows the front-end and back-end to establish long link communication. In my project file index.html, introduce three JavaScript library files. The code is as follows
 
@@ -85,7 +85,7 @@ stomp.connect(headers, connectCallback ,errorCallback );
 ```
 Start to establish a link and add two callback functions, connectCallback() and errorCallback(). Handle connection success and connection failure respectively.
 
-How to transfer data sets on the back-end
+## How to transfer data sets on the back-end
 
 In the SpringBoot framework, set the access point of WebSocket first. Here I set the address to "/webSocketServer". Set in the class WebSocketConfig.java. The code is as follows
 ```
