@@ -252,3 +252,16 @@ public class IotTask {
 In the above code, the function ioTData(String name, int value) converts the data into JSON format. It creates two nodes for each group of data to store the same data. This is because Echarts' Temperature Gauge requires two node data at a time to display the effect.
 
 This article is an overview of a simple implementation of data visualization for data sets in GridDB. In the Internet of Things business scenario, there are thousands of Internet of Things devices, and the data is massive. This article provides an idea. If you are interested, you can download the code from GitHub.
+
+## How to run easily locally
+   
+After the project code is downloaded from GitHub, it is a ZIP compressed package. After unpacking, the code is in the directory "DataVisualization". In the IntelliJ IDEA development tool, through File ->New ->Project from Existing Sources, specify the directory "DataVisualization", and you can load the project code in Maven mode.
+   
+In the project's configuration file "pom. xml", I have set the Jar library packaging configuration. Execute the "install" operation in Maven, and "micro-web.jar" will be generated under the subdirectory "target" in the module "micro-web.jar".
+   
+The generated "micro-web.jar" is an executable Jar library with Tomcat web container. Enter in the command
+```
+Java -jar micro-web.jar
+```
+You can start the web project. After startup, enter the address in the web browser "http://127.0.0.1:8080". You can see
+ the demonstration effect of the project code.
