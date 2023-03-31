@@ -5,9 +5,9 @@ package com.auto17.dataVisualization.grid;
  */
 
 public class dbConfig {
-    public static final String notificationAddress="239.0.0.1";
-    public static final String notificationPort="31999";
-    public static final String clusterName = "myName";
+    public static final String host="127.0.0.1";
+    public static final String port="10001";
+    public static final String clusterName = "myCluster";
     public static final String user = "admin";
     public static final String password = "admin";
 }
